@@ -39,7 +39,7 @@ public class Order {
         this.id = id;
     }
 
-    public Object getId() {
+    public Long getId() {
         return id;
     }
 

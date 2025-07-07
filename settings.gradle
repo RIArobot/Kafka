@@ -1,4 +1,7 @@
 rootProject.name = 'kafka'
 include 'order-service'
 include 'inventory-service'
+include 'inventory-service:common'
+findProject(':inventory-service:common')?.name = 'common'
+include 'common'
 

@@ -20,13 +20,13 @@ public class OrderService {
         this.eventPublisher = eventPublisher;
     }
 
-    public Order createOrder(Order order) {
+    public Order createOrder() {
 
         // публикация события
         OrderCreatedDTO event = new OrderCreatedDTO(
-                order.getId(),
-                order.getProductId(),
-                order.getQuantity()
+                0L,
+                "1",
+                5
         );
         eventPublisher.publishOrderCreatedEvent(event);
 
@@ -38,7 +38,7 @@ public class OrderService {
         order.setId(idCounter.getAndIncrement());
         order.setCompleted(true);
         orders.add(order);*/
-        return order;
+        return null;
     }
 
     public List<Order> getAllOrders() {

@@ -16,13 +16,10 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @PostMapping
-    public Order createOrder(@RequestBody Order order) {
-        return orderService.createOrder(order);
+    @GetMapping
+    public Order createOrder() {
+        return orderService.createOrder();
     }
 
-    @GetMapping
-    public List<Order> getAllOrders() {
-        return orderService.getAllOrders();
-    }
+
 }

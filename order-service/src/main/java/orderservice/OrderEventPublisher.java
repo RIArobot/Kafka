@@ -1,5 +1,6 @@
 package orderservice;
 
+import dto.OrderCreatedDTO;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,6 @@ public class OrderEventPublisher {
     }
 
     public void publishOrderCreatedEvent(OrderCreatedDTO event) {
-
         kafkaTemplate.send(TOPIC, event);
     }
 }

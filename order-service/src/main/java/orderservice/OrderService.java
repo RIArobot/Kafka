@@ -10,12 +10,13 @@ import java.util.concurrent.atomic.AtomicLong;
 
 @Service
 public class OrderService {
+    private final OrderEventPublisher eventPublisher;
     private final List<Order> orders = new ArrayList<>();
     private final AtomicLong idCounter = new AtomicLong(1);
 
 
-    public OrderService() {
-
+    public OrderService(OrderEventPublisher eventPublisher) {
+        this.eventPublisher = eventPublisher;
     }
 
     public Order createOrder(Order order) {

@@ -13,7 +13,7 @@ public class OrderCreatedEventListener {
         this.inventoryService = inventoryService;
     }
 
-    @KafkaListener(topics = "order-created", groupId = "inventory-group")
+    @KafkaListener(topics = "order-created", groupId = "inventory-group1")
     public void handleOrderCreatedEvent(OrderCreatedDTO event) {
         // обработка события
         Inventory inventory = inventoryService.getInventory(
